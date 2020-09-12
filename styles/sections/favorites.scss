@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.favorites{
+    text-align: center;
+
+    img{
+        width: $favoriteImgWidth;
+        height: $genericHeightIcons;
+    }
+
+    .favoriteItems{
+        width: 90%;
+        min-height: 720px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 158px);
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: 0.5em;
+        grid-row-gap: 0.5em;
+        justify-content: space-between;
+        margin-top: 46px;
+
+        img{
+            width: $imageFavoriteWidth;
+            height: $genericHeightImg;
+        }
+
+    }
+
+}

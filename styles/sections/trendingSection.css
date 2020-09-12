@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* Variables for mobile*/
+.trendingSection p {
+  padding-top: 10px;
+  width: 333px;
+  height: 46px;
+  font-size: 16px;
+  color: #000000;
+  line-height: 23px;
+  margin: auto;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+.trendingSection h2 {
+  padding-top: 40px;
+}
+
+.trendingSection .trendingContainer {
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap column;
+      flex-wrap: wrap column;
+  /*  DISEÑO DE LOS CONTROLES
+        #controlLeft, #controlRight {
+            display: none;
+            border: solid 1px orange;
+            width: 45px;
+
+            img{
+                margin: auto 0 auto 0;
+                width: 40px;
+                height: 40px;
+                border: solid 1px $purple;
+            }
+        }*/
+}
+
+.trendingSection .trendingContainer #resultTrendingGif {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-x: auto;
+}
+
+.trendingSection .trendingContainer #resultTrendingGif .cardTrending {
+  width: 243px;
+  height: 187px;
+  margin-left: 22px;
+}
+
+.trendingSection .trendingContainer #resultTrendingGif::-webkit-scrollbar {
+  display: none;
+}
+
+.trendingSection .trendingContainer #controlLeft, .trendingSection .trendingContainer #controlRight {
+  display: none;
+}
+
+@media all and (min-width: 376px) {
+  .trendingSection > .trendingContainer {
+    width: 80%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-bottom: 3em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .trendingSection > .trendingContainer #controlLeft, .trendingSection > .trendingContainer #controlRight {
+    display: block;
+    width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #572EE5;
+  }
+  .trendingSection > .trendingContainer #resultTrendingGif {
+    width: 80%;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=trendingSection.css.map */

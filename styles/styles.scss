@@ -1,0 +1,26 @@
+@import "sections/variables.scss";
+@import "sections/header.scss";
+@import "sections/burgerMenu.scss";
+@import "sections/genericClasses.scss";
+@import "sections/footer.scss";
+@import "sections/mainsection.scss";
+@import "sections/trendingSection.scss";
+@import "sections/favorites.scss";
+@import "sections/gifos.scss";
+@import "sections/mixin.scss";
+@import "sections/createGif.scss";
+@import "sections/modalView.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media all and (max-width: 375px) {
+    @include aplicarTipografiaMobile();
+}
+
+@media all and (min-width: 376px) {
+    @include ajustarTextos();
+}

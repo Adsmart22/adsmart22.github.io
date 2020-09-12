@@ -1,0 +1,92 @@
+/* Variables for mobile*/
+.purpleBar {
+  background-color: #572EE5;
+  height: 5px;
+  width: 100%;
+}
+
+.graySection {
+  background-color: #F3F5F8;
+}
+
+.whiteSection {
+  background-color: #FFFFFF;
+}
+
+#mainTitle {
+  width: 288px;
+  height: 150px;
+  margin: auto;
+  font-weight: bold;
+  font-size: 30px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 36px;
+}
+
+#mainTitle span {
+  color: #50E3C2;
+}
+
+.secundaryTitle {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  color: #572EE5;
+  line-height: 30px;
+  font-family: "Montserrat";
+}
+
+.secundaryTitle span {
+  color: #50E3C2;
+}
+
+.bodyText {
+  font-family: "Roboto";
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  line-height: 29px;
+}
+
+.btnShowMore {
+  border: solid 1px #572EE5;
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  width: 127px;
+  height: 50px;
+  font-size: 13px;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 78px auto 78px auto;
+  font-family: "Montserrat";
+}
+
+.btnShowMore:hover {
+  background-color: #572EE5;
+  color: #FFFFFF;
+}
+
+.btnSteps {
+  border: solid 1px #572EE5;
+  background-color: #FFFFFF;
+  border-radius: 32px;
+  color: #572EE5;
+  width: 32px;
+  height: 32px;
+}
+
+.btnSteps:hover {
+  background-color: #572EE5;
+  color: #FFFFFF;
+}
+
+#trendingText, #lastGifText {
+  width: 288px;
+}
+
+.favorites, .myGifos, .resultOfSearch {
+  display: none;
+}
+/*# sourceMappingURL=genericClasses.css.map */

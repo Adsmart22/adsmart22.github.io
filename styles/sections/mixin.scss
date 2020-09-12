@@ -1,0 +1,60 @@
+@import './variables.scss';
+
+@mixin aplicarTipografiaMobile(){
+    .header{
+        font-family: $fuenteHeader;
+        font-size: $tamanoFuente;
+    }
+    .menu{
+        font-family: $fuenteBody;
+        font-weight: bold;
+        font-size: $tamanoMenu;
+    }
+    .main {
+        font-family: $fuenteBody;
+        font-size: $tamanoFuente;
+
+        #mainTitle {
+            font-size: $tamanoTitulo;
+        }
+        input {
+            font-family: $fuenteHeader;
+        }
+    }
+
+    .trendingSection > p {
+        font-family: $fuenteBody;
+        font-size: $tamanoFuente;
+    }
+    
+    .secundaryTitle{
+        font-size: $tamanoSubtitulo;
+        font-family: $fuenteBody;
+    }
+
+    .btnShowMore{
+        font-size: $tamanoButton;
+        font-family: $fuenteBody;
+    }
+    
+    .footer {
+        font-size: $tamanoMenu;
+        font-family: $fuenteRegular;
+    }
+}
+
+@mixin ajustarTextos(){
+    #mainTitle {
+        width: 400px;
+        height: 100px;
+        margin: 75px auto 30px auto;
+        font-size: 36px;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    #trendingText, #lastGifText{
+        width: 500px;
+    }
+
+}

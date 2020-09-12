@@ -1,0 +1,113 @@
+/* Variables for mobile*/
+.createGif {
+  display: none;
+  width: 90%;
+  margin: auto;
+  border: solid 1px red;
+}
+
+.createGif .containerVideo {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap column;
+      flex-wrap: wrap column;
+}
+
+.createGif .containerVideo #ownGifContainer {
+  width: 688px;
+  height: 380px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 1px #572EE5;
+}
+
+.createGif .containerVideo #ownGifContainer h2 {
+  margin-top: 5em;
+}
+
+.createGif .containerVideo #complemento {
+  opacity: 50;
+}
+
+.createGif .containerVideo #objetosCamara {
+  width: 40%;
+}
+
+.createGif .containerVideo #objetosCamara > #camara {
+  width: 123px;
+  height: 162px;
+}
+
+.createGif .containerVideo #objetosCamara > #camara {
+  width: 91px;
+  height: 151px;
+}
+
+.createGif .panelRecord {
+  width: 80%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 90px;
+      grid-template-columns: 1fr 1fr 90px;
+  -ms-grid-rows: (60px)[3];
+      grid-template-rows: repeat(3, 60px);
+}
+
+.createGif .panelRecord #stepsGif {
+  margin: 2em auto 2em auto;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap column;
+      flex-wrap: wrap column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.createGif .panelRecord .shortBar {
+  width: 80%;
+  margin: auto;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.createGif .panelRecord #movie {
+  width: 100px;
+  height: 100px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -webkit-transform: translate(-80px, -20px);
+          transform: translate(-80px, -20px);
+}
+
+.createGif .gridButton {
+  margin: auto;
+}
+
+@media all and (min-width: 375px) {
+  .createGif {
+    display: none;
+  }
+}
+/*# sourceMappingURL=createGif.css.map */

@@ -1,0 +1,49 @@
+/* Variables for mobile*/
+.header {
+  width: 100%;
+  min-height: 100px;
+}
+
+.header .menuSection {
+  height: 95px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .menuSection .mainLogo {
+  height: 48.8px;
+  width: 60.8px;
+  margin-left: 22px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+
+.header .menuSection .logoDesktop {
+  height: 60px;
+  width: 72px;
+  margin-left: 156px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+
+.header .menuSection .menuIcon, .header .menuSection .closeMenu {
+  width: 15px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.header .menuSection #masOpciones {
+  display: none;
+}
+/*# sourceMappingURL=header.css.map */

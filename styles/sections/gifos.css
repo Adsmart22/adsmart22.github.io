@@ -1,0 +1,33 @@
+/* Variables for mobile*/
+.myGifos {
+  text-align: center;
+}
+
+.myGifos img {
+  width: 23px;
+  height: 21px;
+}
+
+.myGifos .gifosItems {
+  width: 90%;
+  min-height: 720px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (156px)[2];
+      grid-template-columns: repeat(2, 156px);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 46px;
+}
+
+.myGifos .gifosItems img {
+  width: 156px;
+  height: 120px;
+}
+/*# sourceMappingURL=gifos.css.map */

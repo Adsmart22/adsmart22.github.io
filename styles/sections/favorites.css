@@ -1,0 +1,33 @@
+/* Variables for mobile*/
+.favorites {
+  text-align: center;
+}
+
+.favorites img {
+  width: 28px;
+  height: 21px;
+}
+
+.favorites .favoriteItems {
+  width: 90%;
+  min-height: 720px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (158px)[2];
+      grid-template-columns: repeat(2, 158px);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 46px;
+}
+
+.favorites .favoriteItems img {
+  width: 158px;
+  height: 120px;
+}
+/*# sourceMappingURL=favorites.css.map */

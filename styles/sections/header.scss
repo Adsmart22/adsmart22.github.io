@@ -1,0 +1,40 @@
+@import './variables.scss';
+
+.header{
+    width: $headerWidth;
+    min-height: $headerHeight;
+
+    .menuSection{
+        height: 95px;
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: space-between;
+        align-items: center;
+
+        .mainLogo{
+            height: $logo;
+            width: $logoWidht;
+            margin-left: 22px;
+            font-weight: bold;
+            font-family: 'Roboto';
+        }
+
+        .logoDesktop{
+            height: $logoHeightDesk;
+            width: $logoWidhtDesk;
+            margin-left: 156px;
+            font-weight: bold;
+            font-family: 'Roboto';
+        }
+        .menuIcon, .closeMenu{
+            width: $menuIconWidth;
+            height: $menuIconHeight;
+            //margin-right: 24px;
+            pointer-events: none;
+        }
+
+        #masOpciones{
+            display: none;
+        }
+    }    
+}

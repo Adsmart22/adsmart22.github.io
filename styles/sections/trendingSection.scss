@@ -1,0 +1,88 @@
+@import './variables.scss';
+
+.trendingSection {
+    p {
+        padding-top: 10px;
+        width: 333px;
+        height: 46px;
+        font-size: 16px;
+        color: $black;
+        line-height: 23px;
+        margin: auto;
+        text-align: center;
+        font-family: $fuenteRegular;
+    }
+
+    h2{
+        padding-top: 40px;
+    }
+
+    .trendingContainer{
+        margin-top: 2em;
+        display: flex;
+        flex-wrap: wrap column;
+
+        #resultTrendingGif {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+
+            .cardTrending{
+                width: $trendingImgWidth;
+                height: $trendingImgHeight;
+                margin-left: 22px;
+            }
+        }
+
+        #resultTrendingGif::-webkit-scrollbar{
+            display: none;
+        }
+
+        #controlLeft, #controlRight {
+            display: none;
+        }
+
+        /*  DISEÑO DE LOS CONTROLES
+        #controlLeft, #controlRight {
+            display: none;
+            border: solid 1px orange;
+            width: 45px;
+
+            img{
+                margin: auto 0 auto 0;
+                width: 40px;
+                height: 40px;
+                border: solid 1px $purple;
+            }
+        }*/
+    }
+} 
+
+
+
+@media all and (min-width: 376px) {
+    .trendingSection > .trendingContainer {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 3em;
+        justify-content: center;
+        align-items: center;
+
+        #controlLeft, #controlRight {
+            display: block;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid $purple;
+        }
+        #resultTrendingGif{
+            width: 80%;
+            margin: auto;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+/* Variables for mobile*/
+body > main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap column;
+          flex-flow: wrap column;
+}
+
+body > main .imgBusqueda {
+  width: 273px;
+  height: 130px;
+  margin: auto;
+}
+
+body > main .searchControl {
+  border-radius: 27px;
+  background-color: #FFFFFF;
+  border: #572EE5 1px solid;
+  height: 50px;
+  width: 334px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > main .searchControl input {
+  border: none;
+  width: 215px;
+  height: 24px;
+  margin-left: 40px;
+}
+
+body > main .searchControl img {
+  width: 24px;
+  height: 24px;
+}
+
+body > main p {
+  margin: 20px auto 48px auto;
+  color: #572EE5;
+  font-size: 16px;
+  width: 236px;
+  height: 75px;
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: normal;
+}
+
+body > main span {
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+body > main .resultOfSearch {
+  width: 100%;
+}
+
+body > main .resultOfSearch .resultContainer {
+  margin-top: 46px;
+  width: 90%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+body > main .resultOfSearch .resultContainer .gifResult {
+  width: 156px;
+  height: 120px;
+}
+
+@media all and (min-width: 376px) {
+  .main #mainTitle {
+    font-size: 35px;
+    width: 500px;
+  }
+  .main #searchImg {
+    width: 400px;
+    height: 200px;
+  }
+  .main .searchControl {
+    width: 551px;
+    height: 50px;
+  }
+  .main .searchControl input {
+    width: 310px;
+    height: 22px;
+    margin-left: 10px;
+  }
+}
+/*# sourceMappingURL=mainsection.css.map */

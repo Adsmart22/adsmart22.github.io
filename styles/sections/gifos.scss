@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.myGifos{
+    text-align: center;
+
+    img{
+        width: $gifImgW;
+        height: $genericHeightIcons;
+    }
+
+    .gifosItems{
+        width: 90%;
+        min-height: 720px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 156px);
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: 0.5em;
+        grid-row-gap: 0.5em;
+        justify-content: space-between;
+        margin-top: 46px;
+
+        img{
+            width: $gifItemW;
+            height: $genericHeightImg;
+        }
+
+    }
+
+}

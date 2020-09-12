@@ -1,0 +1,140 @@
+@import './variables.scss';
+
+
+.menuSection {
+    input[type="checkbox"], .menuIcon, .closeMenu {
+        position: absolute;  
+        right: 24px;
+    }
+
+    input[type="checkbox"] {
+        opacity: 0; 
+    }  
+
+    input:checked ~ nav {
+        display: block;
+        transition: max-width 0.3s linear;
+    }
+
+    input:checked ~ #menuIcon {
+        display: none;
+      }
+      
+    input:not(:checked) ~ #closeMenu {
+        display: none;
+    }
+}
+
+nav {
+    text-align: center;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+    background-color: $fondoMenu;
+    opacity: 100%;
+    color: $white;
+
+    ul{
+        list-style: none;
+        width: 100%;
+        font-size: 20px;
+
+        li{
+            height: 70px;
+            list-style: none;
+            display: block;
+
+            hr {
+                width: 30%;
+                margin: auto;
+                color: white;
+                margin-top: 1em;
+            }
+
+            a{
+                color: $white;
+                margin-top: 40px;
+                display: block;
+                text-decoration: none;
+            }
+        } 
+    }
+} 
+
+@media all and (min-width: 376px) {
+    header > .menuSection {
+        width: 100%;
+        #menuIcon, #closeMenu {
+            display: none;
+        }
+
+        nav {
+            width: auto;
+            height: 90px;
+            position: relative;
+            background-color: $white;
+            display: block;
+            position: relative;
+            top: 0;
+            text-align: center;
+            margin-right: 100px;
+
+            ul > li {
+                display: inline-block;
+                padding-left: 20px;
+                font-family: $fuenteBody;
+
+                hr{
+                    display:none;
+                } 
+
+                a{
+                    color: $purple;
+                    font-family: $fuenteBody;
+                    font-size: $menuDesktop;
+                    display: inline-block;
+                    text-decoration: none;
+                    padding-left: 20px;
+                    margin-top: 36px;
+                    font-weight: bold;
+
+                    &:hover{
+                        text-decoration: underline;
+                        text-decoration-color: $lightAqua;
+                        text-decoration-line: solid ;
+                        line-height: 2px; 
+                    }
+
+                    &:active{
+                        color: $grayMedium;
+                    }
+                }
+
+                
+
+                .masOpciones {
+                    display: block;
+                    margin: auto;
+                    border-radius: 50px;
+                    //width: 20%;
+                    border: 1px $purple solid;
+                    height: 56px;
+                    width: 56px;
+                    display: grid;
+                    justify-content: center;
+                    align-content: center;
+                }
+                .moreImg {
+                    width: 19px;
+                    height: 19px;
+                }
+
+                
+            }
+
+        }
+    }
+}

@@ -1,0 +1,93 @@
+@import './variables.scss';
+
+.purpleBar{
+    background-color: $purple;
+    height: 5px;
+    width: 100%;
+}
+
+.graySection{
+    background-color: $grayLight;
+}
+
+.whiteSection{
+    background-color: $white;
+}
+
+#mainTitle{
+    width: 288px;
+    height: 150px;
+    margin: auto;
+    font-weight: bold;
+    font-size: 30px;
+    color: $purple;
+    text-align: center;
+    line-height: 36px;
+
+    span{
+        color: $aqua;
+    }
+}
+
+.secundaryTitle{
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    color: $purple;
+    line-height: 30px;
+    font-family: $fuenteBody;
+
+    span {
+        color: $aqua;
+    }
+}
+
+.bodyText {
+    font-family: $fuenteRegular;
+    font-size: 16px;
+    color: $black;
+    text-align: center;
+    line-height: 29px;
+}
+
+.btnShowMore{
+    border: solid 1px $purple;
+    background-color: $white;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    font-size: 13px;
+    color: $purple;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 78px auto 78px auto;
+    font-family: $fuenteBody;
+
+    &:hover{
+        background-color: $purple;
+        color: $white;
+    }
+}
+
+.btnSteps {
+    border: solid 1px $purple;
+    background-color: $white;
+    border-radius: 32px;
+    color: $purple;
+    width: 32px;
+    height: 32px;
+
+    &:hover{
+        background-color: $purple;
+        color: $white;
+    }
+}
+
+#trendingText, #lastGifText {
+    width: 288px;
+}
+
+
+.favorites, .myGifos, .resultOfSearch{
+    display: none;
+}

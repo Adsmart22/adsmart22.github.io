@@ -1,0 +1,128 @@
+@import "./variables.scss";
+
+.mainModal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: $white;
+    z-index: 2;
+    top: 0;
+    right: o;
+    left: 0;
+    opacity: 100%;
+    transition: all 1s;
+
+    .modalContenido {
+        margin: 20% auto;
+        position: relative;
+        width: 90%;
+
+        .headerModal{
+            text-align: right;
+            height: 24px;
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .imgModal{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            #centralImg {
+                width: 318px;
+                height: 245px;
+                margin: 20% auto;
+            }
+
+            span {
+                width: 40px;
+                height: 40px;
+                border: 1px solid $purple;
+                text-align: center;
+                display: none;
+                margin-left: 2.5em;
+                margin-right: 2.5em;  
+
+                #btnLeft, #btnRight {
+                    width: 8px;
+                    right: 14px;   
+                    margin: 25% auto;  
+                }
+            }
+            
+        }
+        .gifOptions{
+            width: 80%;
+            margin: auto;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p{
+                margin-top: -15px;
+                width: 80%;
+                font-family: 'Roboto-Regular';
+                font-size: 15px;
+                color: black;
+                text-align: left;
+
+                span{
+                    font-family: 'Montserrat-Bold';
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+                span::before { 
+                    content: '\A'; 
+                    white-space: pre;   
+                }
+            }
+
+            img{
+                width: 20px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+@media all and (min-width:376px) {
+    .mainModal {
+        .modalContenido {
+            margin: 5% auto;
+
+            .headerModal{
+                height: 80px;
+                img {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+
+            .imgModal{
+                height: 55vh;
+    
+                #centralImg{
+                    width: 650px;
+                    height: 385px;
+                }
+            }
+
+            .gifOptions{
+                height: 80px;
+    
+                p{
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+        
+
+    .mainModal > .modalContenido > .imgModal > span {
+        display: block;
+    }
+}

@@ -1,0 +1,93 @@
+@import './variables.scss';
+
+body > main {
+    display: flex;
+    flex-flow: wrap column;
+
+    .imgBusqueda {
+        width: $mainImgWidth;
+        height: $mainImgHeight;
+        margin: auto;
+    }
+
+    .searchControl{
+        border-radius: 27px;
+        background-color: $white;
+        border: $purple 1px solid;
+        height: 50px;
+        width: 334px;
+        margin:auto;
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        input {
+            border: none;
+            width: $inputwidth;
+            height: $inputHeight;
+            margin-left: 40px;
+        }
+        img{
+            width: $serchImg;
+            height: $serchImg;
+        }
+    }
+    p{
+        margin: 20px auto 48px auto;
+        color: $purple;
+        font-size: 16px;
+        width: 236px;
+        height: 75px;
+        text-align: center;
+        font-family: $fuenteBodyMedium;
+        font-weight: normal;
+    }
+    span {
+        margin-top: 1em;
+        font-weight: bold;
+    }
+
+    .resultOfSearch{
+        width: 100%;
+
+        .resultContainer{
+            margin-top: 46px;
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr) ;
+            column-gap: 5px;
+
+
+            .gifResult{
+                width: $resultWidth;
+                height: $resultHeight;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 376px) {
+    .main {
+        #mainTitle{
+            font-size: 35px;
+            width: 500px;
+        }
+        #searchImg{
+            width: 400px;
+            height: 200px;
+        }
+        .searchControl{
+            width: 551px;
+            height: 50px;
+
+            input {
+                width: 310px;
+                height: 22px;
+                margin-left: 10px;
+            }
+        }
+
+    }
+}
