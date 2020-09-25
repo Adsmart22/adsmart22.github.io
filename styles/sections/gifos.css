@@ -22,7 +22,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 46px;
-  margin-bottom: 46px;
+  padding-bottom: 46px;
 }
 
 .myGifos #gifosItems .imgGifItem {
