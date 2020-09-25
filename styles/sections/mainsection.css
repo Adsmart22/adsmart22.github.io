@@ -1,3 +1,4 @@
+/*dark mode */
 /* Variables for mobile*/
 body > main {
   display: -webkit-box;
@@ -19,7 +20,6 @@ body > main .searchControl {
   border-radius: 27px;
   background-color: #FFFFFF;
   border: #572EE5 1px solid;
-  height: 50px;
   width: 334px;
   margin: auto;
   display: -webkit-box;
@@ -37,16 +37,50 @@ body > main .searchControl {
           align-items: center;
 }
 
+body > main .searchControl #coincidencias {
+  width: 80%;
+  list-style-type: none;
+  padding-bottom: 15px;
+}
+
+body > main .searchControl #coincidencias div {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 7px;
+}
+
+body > main .searchControl #coincidencias div img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  margin-top: 0;
+}
+
 body > main .searchControl input {
-  border: none;
-  width: 215px;
-  height: 24px;
-  margin-left: 40px;
+  border: 0;
+  outline: none;
+  width: 200px;
+  min-height: 24px;
+  margin-top: 10px;
 }
 
 body > main .searchControl img {
   width: 24px;
   height: 24px;
+  margin-top: 10px;
+}
+
+body > main .searchControl #cerrarBusqueda {
+  display: none;
+  width: 14px;
+  height: 14px;
 }
 
 body > main p {
@@ -60,6 +94,12 @@ body > main p {
   font-weight: normal;
 }
 
+body > main p ul > li {
+  display: inline-block;
+  list-style-type: none;
+  line-height: 25px;
+}
+
 body > main span {
   margin-top: 1em;
   font-weight: bold;
@@ -69,8 +109,16 @@ body > main .resultOfSearch {
   width: 100%;
 }
 
-body > main .resultOfSearch .resultContainer {
-  margin-top: 46px;
+body > main .resultOfSearch #sinResulutados {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 20px;
+  display: none;
+}
+
+body > main .resultOfSearch #resultContainer {
+  padding-top: 46px;
   width: 90%;
   margin: auto;
   display: -ms-grid;
@@ -79,14 +127,55 @@ body > main .resultOfSearch .resultContainer {
       grid-template-columns: repeat(2, 1fr);
   -webkit-column-gap: 5px;
           column-gap: 5px;
+  row-gap: 5px;
 }
 
-body > main .resultOfSearch .resultContainer .gifResult {
-  width: 156px;
-  height: 120px;
+body > main #masBusqueda {
+  display: none;
 }
 
 @media all and (min-width: 376px) {
+  .main #mainTitle {
+    font-size: 28px;
+    width: 380px;
+  }
+  .main #searchImg {
+    width: 300px;
+    height: 150px;
+  }
+  .main .searchControl {
+    width: 400px;
+  }
+  .main .searchControl input {
+    width: 280px;
+    height: 22px;
+    margin-left: 10px;
+  }
+  .main p {
+    width: 400px;
+    height: 75px;
+  }
+  .main p ul {
+    width: 400px;
+    margin: auto;
+  }
+  .main p ul li {
+    cursor: pointer;
+  }
+  .main .resultOfSearch > #resultContainer {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 7px;
+            column-gap: 7px;
+    row-gap: 7px;
+  }
+  .main .resultOfSearch > #resultContainer .gifResult {
+    width: 100%;
+    height: 170px;
+  }
+}
+
+@media all and (min-width: 700px) {
   .main #mainTitle {
     font-size: 35px;
     width: 500px;
@@ -97,12 +186,33 @@ body > main .resultOfSearch .resultContainer .gifResult {
   }
   .main .searchControl {
     width: 551px;
-    height: 50px;
   }
   .main .searchControl input {
     width: 310px;
     height: 22px;
     margin-left: 10px;
+  }
+  .main p {
+    width: 500px;
+    height: 75px;
+  }
+  .main p ul {
+    width: 500px;
+    margin: auto;
+  }
+  .main p ul li {
+    cursor: pointer;
+  }
+  .main .resultOfSearch > #resultContainer {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    row-gap: 10px;
+  }
+  .main .resultOfSearch > #resultContainer .gifResult {
+    width: 100%;
+    height: 200px;
   }
 }
 /*# sourceMappingURL=mainsection.css.map */

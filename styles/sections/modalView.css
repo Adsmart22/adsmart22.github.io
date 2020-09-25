@@ -1,3 +1,4 @@
+/*dark mode */
 /* Variables for mobile*/
 .mainModal {
   display: none;
@@ -17,7 +18,7 @@
 .mainModal .modalContenido {
   margin: 20% auto;
   position: relative;
-  width: 90%;
+  width: 80%;
 }
 
 .mainModal .modalContenido .headerModal {
@@ -42,7 +43,7 @@
           align-items: center;
 }
 
-.mainModal .modalContenido .imgModal #centralImg {
+.mainModal .modalContenido .imgModal .centralImg {
   width: 318px;
   height: 245px;
   margin: 20% auto;
@@ -102,6 +103,7 @@
 .mainModal .modalContenido .gifOptions img {
   width: 20px;
   height: 18px;
+  margin-left: 10px;
 }
 
 @media all and (min-width: 376px) {
@@ -118,7 +120,7 @@
   .mainModal .modalContenido .imgModal {
     height: 55vh;
   }
-  .mainModal .modalContenido .imgModal #centralImg {
+  .mainModal .modalContenido .imgModal .centralImg {
     width: 650px;
     height: 385px;
   }

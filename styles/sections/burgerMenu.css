@@ -1,3 +1,4 @@
+/*dark mode */
 /* Variables for mobile*/
 .menuSection input[type="checkbox"], .menuSection .menuIcon, .menuSection .closeMenu {
   position: absolute;
@@ -45,6 +46,9 @@ nav ul li {
   height: 70px;
   list-style: none;
   display: block;
+  /* .masOpciones {
+                display: none;
+            } */
 }
 
 nav ul li hr {
@@ -68,26 +72,26 @@ nav ul li a {
   header > .menuSection #menuIcon, header > .menuSection #closeMenu {
     display: none;
   }
-  header > .menuSection nav {
+  header > .menuSection .withoutDarkMode {
     width: auto;
     height: 90px;
     position: relative;
-    background-color: #FFFFFF;
     display: block;
     position: relative;
     top: 0;
     text-align: center;
-    margin-right: 100px;
+    background-color: #FFFFFF;
+    right: 100px;
   }
-  header > .menuSection nav ul > li {
+  header > .menuSection .withoutDarkMode ul > li {
     display: inline-block;
     padding-left: 20px;
     font-family: "Montserrat";
   }
-  header > .menuSection nav ul > li hr {
+  header > .menuSection .withoutDarkMode ul > li hr {
     display: none;
   }
-  header > .menuSection nav ul > li a {
+  header > .menuSection .withoutDarkMode ul > li a {
     color: #572EE5;
     font-family: "Montserrat";
     font-size: 13px;
@@ -97,7 +101,7 @@ nav ul li a {
     margin-top: 36px;
     font-weight: bold;
   }
-  header > .menuSection nav ul > li a:hover {
+  header > .menuSection .withoutDarkMode ul > li a:hover {
     text-decoration: underline;
     -webkit-text-decoration-color: #5ED7C6;
             text-decoration-color: #5ED7C6;
@@ -105,10 +109,10 @@ nav ul li a {
             text-decoration-line: solid;
     line-height: 2px;
   }
-  header > .menuSection nav ul > li a:active {
+  header > .menuSection .withoutDarkMode ul > li a:active {
     color: #9CAFC3;
   }
-  header > .menuSection nav ul > li .masOpciones {
+  header > .menuSection .withoutDarkMode ul > li .masOpciones {
     display: block;
     margin: auto;
     border-radius: 50px;
@@ -123,7 +127,67 @@ nav ul li a {
     -ms-flex-line-pack: center;
         align-content: center;
   }
-  header > .menuSection nav ul > li .moreImg {
+  header > .menuSection .withoutDarkMode ul > li .moreImg {
+    width: 19px;
+    height: 19px;
+  }
+  header > .menuSection .withDarkMode {
+    width: auto;
+    height: 90px;
+    position: relative;
+    display: block;
+    position: relative;
+    top: 0;
+    text-align: center;
+    background-color: #37383C;
+    right: 100px;
+  }
+  header > .menuSection .withDarkMode ul > li {
+    display: inline-block;
+    padding-left: 20px;
+    font-family: "Montserrat";
+  }
+  header > .menuSection .withDarkMode ul > li hr {
+    display: none;
+  }
+  header > .menuSection .withDarkMode ul > li a {
+    color: #FFFFFF;
+    font-family: "Montserrat";
+    font-size: 13px;
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 20px;
+    margin-top: 36px;
+    font-weight: bold;
+  }
+  header > .menuSection .withDarkMode ul > li a:hover {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #5ED7C6;
+            text-decoration-color: #5ED7C6;
+    -webkit-text-decoration-line: solid;
+            text-decoration-line: solid;
+    line-height: 2px;
+  }
+  header > .menuSection .withDarkMode ul > li a:active {
+    color: #9CAFC3;
+  }
+  header > .menuSection .withDarkMode ul > li .masOpciones {
+    background-color: #37383C;
+    display: block;
+    margin: auto;
+    border-radius: 50px;
+    border: 1px #572EE5 solid;
+    height: 56px;
+    width: 56px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  header > .menuSection .withDarkMode ul > li .moreImg {
     width: 19px;
     height: 19px;
   }

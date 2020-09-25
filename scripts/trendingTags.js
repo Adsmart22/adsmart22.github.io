@@ -11,17 +11,11 @@ async function obtenerTagsTrending () {
     let status = trendingInfo.meta.status;
     
     try {
-        if (status === 200) {
-            /* console.log("entro al exito");
-            console.log(trendingInfo.data);
-            console.log(trendingInfo.data[0]);
-            console.log(trendingInfo.data[1]); */
-
+        if (status === 200 && trendingInfo.data.length > 0) {
             for(let i = 0; i < 6; i+=1) {
                 elementsTranding.push(trendingInfo.data[i]);
             }
 
-            /* console.warn(elementsTranding); */
             actualizarTagsFont(elementsTranding);
         } else if (status === 404){
             throw new Error("Error - recurso no encontrado");
@@ -36,11 +30,25 @@ async function obtenerTagsTrending () {
 
 function actualizarTagsFont(tags){
     let texto = document.getElementById("trendingText");
-    texto.innerHTML = tags;
-    /* console.log("Trending text" +texto);
-    console.log("Arrays tags" + tags); */
+    let buscador = document.getElementById("barraBuscadora");
+    //texto.innerHTML = tags;
 
-    //console.log("Trending text" + tags.length)
+    let lista = document.createElement("ul");
+    
+    //console.info(tags);
+
+    for (let i=0; i < tags.length; i+=1 ) {
+        let item = document.createElement("li");
+        item.innerText = tags[i] ;
+        
+        item.addEventListener("click", ()=>{
+            buscador.value = item.innerText;
+        });
+        lista.append(item);
+        lista.append(",  ");
+    }
+
+    texto.append(lista);
 }
 
 obtenerTagsTrending ();

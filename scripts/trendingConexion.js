@@ -1,13 +1,15 @@
 /* Importar variables */
 
-import { endpointTrending, apiKey, tituloGenerico, nombreGenerico } from './variables.js';
+import { endpointTrending, apiKey, tituloGenerico, nombreGenerico, arregloFavoritos } from './variables.js';
+import {crearGiF} from './modalFuncionalidad.js';
+
 
 /* Se agregan eventos a los botones */
 
 let botonIzquierdo = document.getElementById("controlLeft");
 let botonDerecho = document.getElementById("controlRight");
 let imgFlechaIzq = document.getElementById("tredingLeft"); 
-let imgFlechaDer = document.getElementById("controlRight");
+let imgFlechaDer = document.getElementById("tredingRight");
 
     if(screen.width > 375){
         botonIzquierdo.addEventListener( "mouseover" , () => {
@@ -32,30 +34,28 @@ let imgFlechaDer = document.getElementById("controlRight");
 const limit = 12;
 
 async function conectar () {
-    let response = await fetch(endpointTrending + "?api_key="+ apiKey + "&limit=" + limit);
+    let response = await fetch(endpointTrending + "?api_key="+ apiKey + "&limit=" + limit + "&rating=15");
     let gifInfo = await response.json();
     let status = gifInfo.meta.status;
 
-    console.warn(gifInfo);
-
-    console.log(status);
-    console.log("Tmaño " + gifInfo.data.length);
+    //console.warn(gifInfo);
+    //console.log(status);
+    //console.log("Tmaño " + gifInfo.data.length);
 
     try {
         if (status === 200 && gifInfo.data.length > 0) {
 
             for (let i = 0; i < gifInfo.data.length; i+=1 ){
                 let url = gifInfo.data[i].images.fixed_height_downsampled.url;
-                /* let name = gifInfo.data[i].username;
-                let title = gifInfo.data[i].title;  */
                 let name ;
                 let title ; 
+                let idGif = gifInfo.data[i].id;
 
                 try{
-                    if(!!gifInfo.data[i].user.username || gifInfo.data[i].user.username === ""){
+                    if(gifInfo.data[i].username === ""){
                         throw new Error("No existe el username - asignar genérico");
                     } else {
-                        name = gifInfo.data[i].user.username;
+                        name = gifInfo.data[i].username;
                     }
                 }
                 catch (error){
@@ -64,17 +64,15 @@ async function conectar () {
                 }
 
                 try {
-                    if(!!gifInfo.data[i].user.display_name || gifInfo.data[i].user.display_name === ""){
-                        throw new Error("No existe el display - asignar genérico");
+                    if(gifInfo.data[i].title === ""){
+                            throw new Error("No existe el display - asignar genérico");
                     }else{
-                        title = gifInfo.data[i].user.display_name;
+                        title = gifInfo.data[i].title;
                     }
                 } catch{
                     title = tituloGenerico;
-                    //console.error(error);
                 }
-                
-                crearGiF(url, name, title);
+                crearGiF(idGif, url, name, title, "resultTrendingGif", "cardTrending");
             } 
             sessionStorage.setItem('indiceTrending', '12');
         } else if (status === 404){
@@ -87,32 +85,5 @@ async function conectar () {
         console.error(error);
     }
 };
-
-let contador = 0;
-let modal = document.getElementById("modal");
-const imagenModal = document.getElementById("centralImg");
-const imgUser = document.getElementById("imgUser");
-
-function crearGiF( urlGif, name, title){
-    let contenedor = document.getElementById("resultTrendingGif");
-    let card = document.createElement("img");
-
-    card.src = urlGif;
-    card.id = name;
-    card.alt = title;
-    card.setAttribute("class", "cardTrending");
-    contenedor.append(card);
-
-    card.addEventListener("click", () => {
-        modal.style.display="block";
-        imagenModal.src = card.src;
-        imgUser.textContent = name;
- 
-        let titulo = document.createElement("span");
-        titulo.innerText = title;
-        imgUser.append(titulo);
-    });
-    contador+=1;
-}
 
 conectar();

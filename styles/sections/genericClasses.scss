@@ -42,6 +42,8 @@
     }
 }
 
+.tr
+
 .bodyText {
     font-family: $fuenteRegular;
     font-size: 16px;
@@ -89,5 +91,88 @@
 
 
 .favorites, .myGifos, .resultOfSearch{
+    display: none;
+}
+
+.cardTrending{
+    width: $trendingImgWidth;
+    height: $trendingImgHeight;
+    margin-left: 22px;
+}
+
+.gifResult{
+    width: $resultWidth;
+    height: $resultHeight;
+}
+
+.noContent {
+    width: 50%;
+    margin:auto;
+    margin-top:2.5em;
+    display: none;
+
+    div{
+        margin: auto;
+        border-radius: 50%;
+        height: 75px;
+        width: 75px;
+        background-color: $grayLight;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p{
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        color: $aqua;
+        line-height: 30px;
+        font-family: $fuenteBody;
+        font-weight: bold;
+        margin-top: 1em;
+    }
+}
+
+
+/* Clases para opción descarga */
+
+#panelDescarga{
+    position: relative;
+    width: 50px;
+    top: -7px;
+    
+    img, a {
+        position: absolute;
+    }
+
+    a {
+        z-index: 2;
+        opacity: 0;
+    }
+
+}
+
+
+/* Clases para el modal hover - desktop*/
+
+.cardOptions{
+    background-color: $purple;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 2;
+} 
+
+.cardOptionsHidden{
+    opacity: 0;
+}
+
+.cardContainer{
+    position: relative;
+}
+
+/* Estilos para la grabacion */
+
+#grabar, #finalizar, #videoContainer, #subir, #verMasGif, .mainModalVideo, #modalVideo, #masFavoritos {
     display: none;
 }

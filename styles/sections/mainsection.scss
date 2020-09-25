@@ -14,7 +14,7 @@ body > main {
         border-radius: 27px;
         background-color: $white;
         border: $purple 1px solid;
-        height: 50px;
+        //height: 50px;
         width: 334px;
         margin:auto;
         display: flex;
@@ -22,15 +22,44 @@ body > main {
         justify-content: space-evenly;
         align-items: center;
 
+        #coincidencias{
+            width: 80%;
+            list-style-type: none;
+            padding-bottom: 15px;
+
+            div {
+                width: 80%;
+                margin: auto;
+                display: flex;
+                flex-direction: row;
+                padding-top: 7px;
+
+                img {
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 10px;
+                    margin-top: 0;
+                }
+            }
+        }
+
         input {
-            border: none;
+            border: 0;
+            outline: none;
             width: $inputwidth;
-            height: $inputHeight;
-            margin-left: 40px;
+            min-height: $inputHeight;
+            margin-top: 10px;
         }
         img{
             width: $serchImg;
             height: $serchImg;
+            margin-top: 10px;
+        }
+
+        #cerrarBusqueda {
+            display: none;
+            width: 14px;
+            height: 14px;
         }
     }
     p{
@@ -42,6 +71,12 @@ body > main {
         text-align: center;
         font-family: $fuenteBodyMedium;
         font-weight: normal;
+
+        ul > li {
+            display: inline-block;
+            list-style-type: none;
+            line-height: 25px;
+        }
     }
     span {
         margin-top: 1em;
@@ -51,24 +86,76 @@ body > main {
     .resultOfSearch{
         width: 100%;
 
-        .resultContainer{
-            margin-top: 46px;
+        #sinResulutados{
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-top: 20px;
+            display: none;
+        }
+
+        #resultContainer{
+            padding-top: 46px;
             width: 90%;
             margin: auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr) ;
             column-gap: 5px;
+            row-gap: 5px;
+        }
+    }
+    #masBusqueda {
+        display: none;
+    }
+}
 
+@media all and (min-width: 376px) {
+    .main {
+        #mainTitle{
+            font-size: 28px;
+            width: 380px;
+        }
+        #searchImg{
+            width: 300px;
+            height: 150px;
+        }
+        .searchControl{
+            width: 400px;
+
+            input {
+                width: 280px;
+                height: 22px;
+                margin-left: 10px;
+            }
+        }
+        p{
+            width: 400px;
+            height: 75px;
+    
+            ul{
+                width: 400px;
+                margin: auto;
+
+                li {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .resultOfSearch > #resultContainer {
+            grid-template-columns: repeat(3, 1fr) ;
+            column-gap: 7px;
+            row-gap: 7px;
 
             .gifResult{
-                width: $resultWidth;
-                height: $resultHeight;
+                width: 100%;
+                height: 170px;
             }
         }
     }
 }
 
-@media all and (min-width: 376px) {
+@media all and (min-width: 700px) {
     .main {
         #mainTitle{
             font-size: 35px;
@@ -80,7 +167,6 @@ body > main {
         }
         .searchControl{
             width: 551px;
-            height: 50px;
 
             input {
                 width: 310px;
@@ -88,6 +174,29 @@ body > main {
                 margin-left: 10px;
             }
         }
+        p{
+            width: 500px;
+            height: 75px;
+    
+            ul{
+                width: 500px;
+                margin: auto;
 
+                li {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .resultOfSearch > #resultContainer {
+            grid-template-columns: repeat(4, 1fr) ;
+            column-gap: 10px;
+            row-gap: 10px;
+
+            .gifResult{
+                width: 100%;
+                height: 200px;
+            }
+        }
     }
 }

@@ -1,0 +1,97 @@
+@import './variables.scss';
+
+/*ESTILOS MENU*/
+
+.darkModeHeader {
+    background-color: $darkGray;
+
+    .purpleBar {
+        background-color: $black;
+    }
+}
+
+.darkMenu {
+    background-color: $black;
+    color: $white;
+    opacity: 0.9;
+}
+
+.darkMain {
+    background-color: $darkGray;
+
+    #mainTitle, .secundaryTitle, p {
+        color: $white;
+    }
+
+    .searchControl {
+        background-color: $darkGray;
+        border: $white 1px solid;
+
+        input {
+            background-color: $darkGray;
+            color: $white;
+        }
+
+        ul {
+            color: $white
+        }
+    }
+
+    .btnShowMore {
+        border: solid 1px $white;
+        background-color: $darkGray;
+        color: $white;
+    }
+}
+
+.darkOwn {
+    background-color: $darkGray;
+    width: 100%;
+
+    div {
+        background-color: $darkGray;
+        color: $white;
+
+        .secundaryTitle, p {
+            color: $white;
+        }
+    }
+    .purpleBar {
+        background-color: $black;
+    }
+    .btnShowMore {
+        border: solid 1px $white;
+        background-color: $darkGray;
+        color: $white;
+    }
+}
+
+.darkTrending {
+    background-color: $strongGray;
+    color: $white;
+
+    .secundaryTitle, p {
+        color: $white;
+    }
+}
+
+.darkFooter {
+    background-color: $darkGray;
+
+    aside > div > h3, .secundaryTitle, p {
+        background-color: $darkGray;
+        color: $white;
+    }
+
+    .purpleBar {
+        background-color: $black;
+    }
+}
+
+.darkModeModal {
+    background-color: $darkGray;
+
+    #imgUser, span {
+        color: $white;
+    }
+}

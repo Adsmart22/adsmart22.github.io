@@ -19,20 +19,20 @@
         <img src="./images/icons/burger.svg" alt="Menu" class="menuIcon" id="menuIcon" >
         <img src="./images/icons/close.svg" alt="Cerrar" class="closeMenu" id="closeMenu">
         
-        <nav class="menu" id="burgerMenu">
+        <nav class="withoutDarkMode" id="burgerMenu">
           <ul>
-            <li>
-              <a href="" id="nightModeOption" >Modo Nocturno</a> <hr> 
+            <li id="modoOscuroOpt">
+              <a href="#" id="nightModeOption" >Modo Nocturno</a> <hr> 
             </li>
-            <li>
-              <a href="" id="favoritesOption">Favoritos</a> <hr> 
+            <li id="favoritosOpt">
+              <a href="#" id="favoritesOption" >Favoritos</a> <hr> 
             </li>
-            <li>
-              <a href="" id="myGifOption">Mis GifOS</a><hr>
+            <li id="misGifOpt">
+              <a href="#" id="myGifOption" >Mis GifOS</a><hr>
             </li>
             <li id="opcionalAdicional">     
               <div class="masOpciones" id="moreOpt">
-                <img src="./images/buttons/button-crear-gifo.svg" class="moreImg" id="imgMore"/>
+                <img src="./images/buttons/button-crear-gifo.svg" class="moreImg" id="imgMore" alt="Mas opciones"/>
               </div>
             </li>
           </ul>
@@ -43,65 +43,53 @@
       <main class="whiteSection main" id="main">
           <h1 id="mainTitle">Inspírate, busca, guarda y crea los mejores <span>GIFOS</span> </h1>
           <img src="./images/others/ilustra_header.svg" alt="Ilustra" class="imgBusqueda" id="searchImg"/>
-          <span class="searchControl">
-            <input type="text" maxlength="70" placeholder="Busca GIFOS y más">
-            <img src="./images/icons/icon-search.svg" alt="Búsqueda" />
-          </span>          
+          <div class="searchControl" id="panelControl">
+            <img src="./images/icons/close.svg" alt="Cerrar" id="cerrarBusqueda" />
+            <input type="text" maxlength="70" placeholder="Busca GIFOS y más" id="barraBuscadora">
+            <img src="./images/icons/icon-search.svg" alt="Búsqueda" id="btnPanelBusqueda" />
+            <ul id="coincidencias">
+            </ul>
+          </div>          
           
           <span class="secundaryTitle">Trending</span>
-          <p id="trendingText">
-            Reactions, Entertainment, Sports, Stickers, Artist
-          </p>
+          <p id="trendingText"></p>
           <section class="resultOfSearch">
             <h2 class="secundaryTitle" id="result">Resultado</h2>
-            <div class="resultContainer">
-              <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="gifResult">
-              <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="gifResult"/>
+            <img src="./images/icons/icon-busqueda-sin-resultado.svg" id="sinResulutados" alt="Sin resultados"/>
+            <div id="resultContainer">
             </div>
           </section>
-          <button class="btnShowMore">VER MÁS</button>               
+          <button class="btnShowMore" id="masBusqueda">VER MÁS</button>               
       </main>
 
       <!-- Favoritos -->
       <aside class="whiteSection favorites" id="favorites">
         <img src="./images/icons/icon-favoritos.svg" alt="favoritos">
         <h2 class="secundaryTitle">Favoritos</h2>
-        <div class="favoriteItems">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
+        <div class="noContent" id="noFavoritos">
+          <div>
+            <img src="images/icons/icon-favoritos.svg" alt="Sin resultados" />
+          </div>
+          <p>¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!</p>
         </div>
-        <button class="btnShowMore">VER MÁS</button>
+        <div id="favoriteItems">
+        </div>
+        <button class="btnShowMore" id="masFavoritos">VER MÁS</button>
       </aside>
 
       <!-- Mis Gifos -->
       <aside class="whiteSection myGifos" id="myGifos">
         <img src="./images/icons/icon-mis-gifos.svg" alt="mis gifos"/>
         <h2 class="secundaryTitle">Mis GIFOS</h2>
-        <div class="gifosItems">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
-          <img src="./images/dummies/archivoDummy.PNG" alt="prueba">
+        <div class="noContent" id="noGifos">
+          <div>
+            <img src="images/icons/icon-mis-gifos-sin-contenido.svg" alt="sin contenido" />
+          </div>
+          <p>¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!</p>
         </div>
-        <button class="btnShowMore">VER MÁS</button>
+        <div id="gifosItems">
+        </div>
+        <button class="btnShowMore" id="verMasGif">VER MÁS</button>
       </aside>
 
       <!-- Crear gif -->
@@ -109,26 +97,41 @@
         <div class="containerVideo">
           <img src="images/others/camara.svg" alt="camara" id ="camara"/>
           <img src="images/others/element-luz-camara.svg" alt="lights" id="complemento" />
-          <div id="ownGifContainer" class="bodyText">
-            <h2 class="secundaryTitle">Aquí podrás crear tus propios <span>GIFOS</span></h2>
-            <p>¡Crea tus GIF en tan sólo 3 pasos!</p>
-            <p>(solo necesitas una cámara para grabar un video)</p>
+          <div id="ownGifContainer">
+            <div id="internalCont">
+              <h2 class="secundaryTitle" id="info1">Aquí podrás crear tus propios <span>GIFOS</span></h2>
+              <p id="info2">¡Crea tus GIF en tan sólo 3 pasos!</p>
+              <p id="info3">(solo necesitas una cámara para grabar un video)</p>
+              <div class="mainModalVideo">
+                <video id="videoGif"></video>
+                <div id="modalVideo">
+                  <img src="images/icons/icon-link.svg" />
+                  <img src="images/icons/icon-download.svg" />
+                  <img src="images/icons/loader.svg" alt="loader" id="imgVideoModal" />
+                  <p id="textVideoModal">Estamos subiendo tu GIFo</p>
+                </div>
+              </div>             
+            </div>
           </div>
+          <br /><label id="contador"> </label>
         </div>
         <div class="panelRecord">
           <div id="stepsGif"> 
-            <button class="btnSteps">1</button>
-            <button class="btnSteps">2</button>
-            <button class="btnSteps">3</button>
+            <button class="btnSteps" id="step1">1</button>
+            <button class="btnSteps" id="step2">2</button>
+            <button class="btnSteps" id="step3">3</button>
           </div>
           <img src="images/others/pelicula.svg" alt="movie" id="movie"/> 
           <div class="purpleBar shortBar"></div>
         </div>
-        <button class="btnShowMore gridButton">COMENZAR</button>       
+        <button class="btnShowMore gridButton" id="comenzarGrab">COMENZAR</button>  
+        <button class="btnShowMore gridButton" id="grabar">GRABAR</button> 
+        <button class="btnShowMore gridButton" id="finalizar">FINALIZAR</button>
+        <button class="btnShowMore gridButton" id="subir">SUBIR GIF</button>
       </div>
 
       <!-- GIF trending -->
-      <aside class="graySection trendingSection">
+      <aside class="graySection trendingSection" id="trend">
         <h2 class="secundaryTitle">Trending GIFOS</h2>
         <p id="lastGifText">Mira los últimos GIFOS de nuestra comunidad</p>
         <div class="trendingContainer">
@@ -136,12 +139,9 @@
             <img src="./images/buttons/button-left.svg" id="tredingLeft" alt="Ir izquierda"/>
           </div>
           <div id="resultTrendingGif">
-            <!-- <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" id="imagenGif" class="cardTrending"/>
-            <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="cardTrending"/>
-            <img src="./images/dummies/archivoDummy.PNG" alt="archivoPrueba" class="cardTrending"/> -->
           </div>
           <div id="controlRight">
-            <img src="./images/buttons/button-right.svg" id="tredingRight" id="Ir derecha"/>
+            <img src="./images/buttons/button-right.svg" id="tredingRight" alt="Ir derecha"/>
           </div>
         </div>
 
@@ -153,18 +153,21 @@
               <img src="./images/icons/close.svg" alt="cerrar" id="btnCloseModal">
             </div>
             <div class="imgModal">
-              <span>
+              <span id="left">
                 <img src="./images/buttons/button-left.svg" alt="left" id="btnLeft"/>
               </span>
-              <img src="./images/icons/icon-search-mod-noc.svg" alt="gif" id="centralImg" />
-              <span>
+              <img src="./images/icons/icon-search-mod-noc.svg" alt="gif" class="centralImg" id="centralImg" />
+              <span id="right">
                 <img src="./images/buttons/button-right.svg" alt="right" id="btnRight" />
               </span> 
             </div>
             <div class="gifOptions">
               <p id="imgUser">User </p> <!-- <span id="titleGif">Titulo</span> -->
-              <img src="./images/icons/icon-favoritos.svg" alt="Favoritos">
-              <img src="./images/icons/icon-download.svg" alt="Descargar"/>
+              <img src="./images/icons/icon-fav-active.svg" id="btnFavoritos" alt="Favoritos">
+              <div id="panelDescarga">
+                <img src="./images/icons/icon-download.svg" alt="Descargar" id="btnDescarga"/>
+                <a href="" id="descarga">Desc</a>
+              </div>
             </div>
           </div>
         </div>
@@ -174,7 +177,7 @@
             <div>
               <h3>Compartir en:</h3>
               <div class="shareImages">
-                <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer" id="fbLink">
+                <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer">
                   <img src="./images/socialNetworks/icon_facebook.svg" alt="Facebook" id="fb" />
                 </a>
                 <a href="http://www.twitter.com" target="_blank" rel="noopener noreferrer">
@@ -189,12 +192,18 @@
           </aside>  
           <div class="purpleBar"></div>          
       </footer>
-    
-    <script src="./scripts/script.js"> </script>
+
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="./scripts/ajustarPantalla.js"></script>  
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/trendingConexion.js" type="module"></script>
     <script src="./scripts/trendingTags.js" type="module"></script>
-    <script src="./scripts/manipularImagenes.js"></script>
+    <script src="./scripts/autocompleteConection.js" type="module"></script>
+    <script src="./scripts/searchConection.js" type="module"></script>
+    <script src="./scripts/favoritos.js" type="module"> </script>
+    <script src="./scripts/modalFuncionalidad.js" type="module"></script>
+    <script src="./scripts/misGifos.js" type="module"></script>
+    <script src="./scripts/searchMyGifos.js" type="module"></script>
+    <script src="./scripts/darkMode.js"></script>
   </body>
 </html>

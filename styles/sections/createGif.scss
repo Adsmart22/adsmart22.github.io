@@ -4,7 +4,8 @@
     display: none;
     width: 90%;
     margin: auto;
-    border: solid 1px red;
+    //border: solid 1px red;
+    text-align: center;
 
     .containerVideo {
         width: 80%;
@@ -13,11 +14,19 @@
         display: flex;
         flex-wrap: wrap column;
 
-        #ownGifContainer {
+        #ownGifContainer, #videoContainer {
             width: 688px;
             height: 380px;
+            display: flex;
+            justify-content: center;
             align-items: center;
             border: solid 1px $purple;
+
+            #internalCont{
+                width: 600px;
+                height: 360px;
+                border: solid 1px #50E3C2;
+            }
 
             h2{
                 margin-top: 5em;
@@ -41,6 +50,55 @@
         #objetosCamara > #camara {
             width: 91px;
             height: 151px;
+        }
+
+        .mainModalVideo, #videoGif {
+            width: 480px;
+            height: 320px;
+            margin: auto;
+            margin-top: 1em;
+        }
+
+        .mainModalVideo{
+            position: relative;
+
+            #videoGif, #modalVideo {
+                position: absolute;
+            }
+
+            #modalVideo{
+                opacity: 0.6;
+                background: $purple;
+                width: 450px;
+                height: 320px;
+                margin: auto;
+                margin-top: 1em;
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+                p {
+                    font-family: Montserrat;
+                    font-weight: bold;
+                    font-size: 15px;
+                    color: $white;
+                    text-align: center;
+                }
+            }
+        }
+
+        label {
+            position: relative;
+            align-items: center;
+            padding-top: 400px;
+            right: 40px;
+            font-family: Montserrat;
+            font-weight: bold;
+            font-size: 15px;
+            color: $purple;
+            letter-spacing: 0;
+            line-height: 22px;
         }
     }
 

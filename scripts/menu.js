@@ -1,8 +1,8 @@
 /* recuperar opciones de menus */
-let masOpcionesDiv = document.getElementById("moreOpt");
-let modoOscuro = document.getElementById("nightModeOption");
-let favoritos = document.getElementById("favoritesOption");
-let misGif = document.getElementById("myGifOption");
+let masOpcionesDiv = document.getElementById("moreOpt");  // Funciona OK
+let favoritosM = document.getElementById("favoritosOpt");
+let misGif = document.getElementById("misGifOpt");
+let logo = document.getElementById("logo");
 
 /* Recuperar las secciones */
 
@@ -22,20 +22,15 @@ else {
     bloqueGrabar.style.display = "none";
 }
 
-
-/* favoritos.addEventListener( "click" , () => {
-    console.log("entra");
-    bloqueGrabar.style.display = "none";
-    seccionBuscar.style.display = "none";
-    seccionGifos.style.display = "none";
-    console.log("entra");
+favoritosM.addEventListener("click", () => {
+    cerrarBloques();
     seccionFavoritos.style.display = "block";
 });
 
-misGif.addEventListener( "click" , () => {
+misGif.addEventListener("click", () => {
     cerrarBloques();
-    //seccionGifos.style.display = "block";
-});  */ 
+    seccionGifos.style.display = "block";
+});
 
 function cerrarBloques(){
     bloqueGrabar.style.display = "none";
@@ -43,3 +38,9 @@ function cerrarBloques(){
     seccionFavoritos.style.display = "none";
     seccionGifos.style.display = "none";
 }
+
+logo.addEventListener("click", () => {
+    cerrarBloques();
+    seccionBuscar.style.display = "block";
+    location.reload();
+});

@@ -1,3 +1,4 @@
+/*dark mode */
 /* Variables for mobile*/
 .footer {
   color: #000000;
@@ -86,9 +87,6 @@
   .footer aside div .shareImages {
     width: 20%;
     margin: 0;
-  }
-  .footer aside div .shareImages img:hover {
-    background-color: #572EE5;
   }
   .footer aside p {
     width: 30%;

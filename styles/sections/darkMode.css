@@ -1,0 +1,99 @@
+/*dark mode */
+/* Variables for mobile*/
+/*ESTILOS MENU*/
+.darkModeHeader {
+  background-color: #37383C;
+}
+
+.darkModeHeader .purpleBar {
+  background-color: #000000;
+}
+
+.darkMenu {
+  background-color: #000000;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+
+.darkMain {
+  background-color: #37383C;
+}
+
+.darkMain #mainTitle, .darkMain .secundaryTitle, .darkMain p {
+  color: #FFFFFF;
+}
+
+.darkMain .searchControl {
+  background-color: #37383C;
+  border: #FFFFFF 1px solid;
+}
+
+.darkMain .searchControl input {
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkMain .searchControl ul {
+  color: #FFFFFF;
+}
+
+.darkMain .btnShowMore {
+  border: solid 1px #FFFFFF;
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkOwn {
+  background-color: #37383C;
+  width: 100%;
+}
+
+.darkOwn div {
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkOwn div .secundaryTitle, .darkOwn div p {
+  color: #FFFFFF;
+}
+
+.darkOwn .purpleBar {
+  background-color: #000000;
+}
+
+.darkOwn .btnShowMore {
+  border: solid 1px #FFFFFF;
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkTrending {
+  background-color: #222326;
+  color: #FFFFFF;
+}
+
+.darkTrending .secundaryTitle, .darkTrending p {
+  color: #FFFFFF;
+}
+
+.darkFooter {
+  background-color: #37383C;
+}
+
+.darkFooter aside > div > h3, .darkFooter .secundaryTitle, .darkFooter p {
+  background-color: #37383C;
+  color: #FFFFFF;
+}
+
+.darkFooter .purpleBar {
+  background-color: #000000;
+}
+
+.darkModeModal {
+  background-color: #37383C;
+}
+
+.darkModeModal #imgUser, .darkModeModal span {
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=darkMode.css.map */
