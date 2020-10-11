@@ -97,7 +97,7 @@
 .cardTrending{
     width: $trendingImgWidth;
     height: $trendingImgHeight;
-    margin-left: 22px;
+    //margin-left: 22px;
 }
 
 .gifResult{
@@ -150,26 +150,184 @@
         z-index: 2;
         opacity: 0;
     }
-
 }
 
 
 /* Clases para el modal hover - desktop*/
 
-.cardOptions{
-    background-color: $purple;
-    opacity: 0.7;
-    position: absolute;
-    z-index: 2;
-} 
+@media all and (min-width: 100px) {
+    .mainContainer {
+        position: relative;
+        width: 100%;
+    }
+    
+    .gifResult, .imgGifItem, .cardTrending {
+        position: absolute;
+    }
+    
+    .modalView, .modalViewTrend, .modalViewFavGif{
+        background-color: $purple;
+        opacity: 0.7;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        display: none;
+    }
+    .mainContainer, .modalView  {
+        width: $resultWidth;
+        height: $resultHeight;
+    }
 
-.cardOptionsHidden{
-    opacity: 0;
+    #resultTrendingGif::-webkit-scrollbar{
+        display: none;
+    }
+
+    .mainContainerTrend, .mainContFavGif {
+        position: relative;
+        width: 100%;
+    }
+
+    .mainContainerTrend  {
+        width: $trendingImgWidth;
+        height: $trendingImgHeight;
+    }
+    .mainContainerTrend {
+        margin-left: 22px;
+    }
+
+    .modalViewTrend{
+        height: $trendingImgHeight;
+    }
+
+    .mainContFavGif{
+        width: 100%;
+        height: $resultHeight;
+    }
+
+    .modalViewFavGif{
+        height: $resultHeight;
+    }
 }
 
-.cardContainer{
-    position: relative;
+@media all and (min-width: 376px) {
+    .mainContainer {
+        position: relative;
+        width: 100%;
+    }
+    
+    .gifResult, .imgGifItem, .cardTrending {
+        position: absolute;
+    }
+    
+    .mainContainer, .modalView  {
+        width: 100%;
+        height: 170px;
+    }
+
+    .mainContFavGif, .modalViewFavGif {
+        width: 100%;
+        height: 200px;
+    }
+
+    .gifResult, .cardTrending {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mainContainerTrend, .modalViewTrend {
+        width: 243px;
+        height: 200px;
+    }
+
+    .modalView, .modalViewTrend, .modalViewFavGif {
+        display: flex;
+        flex-direction: row;
+        display: none;
+
+        .divContNew {
+            width: 100%;
+            height: 5vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .divLogos{
+            opacity: 0.7;
+            background: #FFFFFF;
+            border-radius: 6px;
+            border-radius: 6px;
+            width: 25px;
+            height: 25px;
+            margin-right: 1vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .descarga {
+            position: relative;
+
+            img, a {
+                position: absolute;
+            }
+            a {
+                z-index: 2;
+                opacity: 0;
+            }
+        }
+
+        /* #panelDescarga{
+            position: relative;
+            width: 50px;
+            top: -7px;
+            
+            img, a {
+                position: absolute;
+            }
+        
+            a {
+                z-index: 2;
+                opacity: 0;
+            }
+        } */
+
+        .imagesFunc {
+            width: 18px;
+            height: 18px;
+        }
+        .cardName {
+            font-family: $fuenteHeader;
+            font-weight: normal;
+            font-size: 15px;
+            color: $white;
+            width: 80%;
+            text-align: left;
+            margin-left: 1.5vw;
+            margin-top: 3vh;
+        }
+        .cardTitle {
+            font-family: $fuenteHeader;
+            font-weight: bold;
+            font-size: 16px;
+            color: $white;
+            width: 80%;
+            text-align: left;
+            margin-left: 1.5vw;
+        }
+    }
+
 }
+
+@media all and (min-width: 700px) {
+    .gifResult{
+        width: 100%;
+        height: 200px;
+    }
+}
+
+
+
 
 /* Estilos para la grabacion */
 

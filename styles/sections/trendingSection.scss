@@ -23,9 +23,12 @@
         flex-wrap: wrap column;
 
         #resultTrendingGif {
-            display: flex;
-            flex-direction: row;
+            /* display: flex;
+            flex-direction: row; */
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
             overflow-x: auto;
+            padding-bottom: 25px;
         }
 
         #resultTrendingGif::-webkit-scrollbar{

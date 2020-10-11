@@ -1,12 +1,9 @@
 /*dark mode */
 /* Variables for mobile*/
-.myGifos {
-  text-align: center;
-}
-
-.myGifos img {
+.myGifos .imgGif {
   width: 23px;
   height: 21px;
+  margin-left: 50vw;
 }
 
 .myGifos #gifosItems {

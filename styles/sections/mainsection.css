@@ -209,10 +209,10 @@ body > main #masBusqueda {
     -webkit-column-gap: 10px;
             column-gap: 10px;
     row-gap: 10px;
-  }
-  .main .resultOfSearch > #resultContainer .gifResult {
-    width: 100%;
-    height: 200px;
+    /* .gifResult{
+                width: 100%;
+                height: 200px;
+            } */
   }
 }
 /*# sourceMappingURL=mainsection.css.map */

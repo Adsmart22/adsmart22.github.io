@@ -42,5 +42,7 @@ function cerrarBloques(){
 logo.addEventListener("click", () => {
     cerrarBloques();
     seccionBuscar.style.display = "block";
-    location.reload();
+    //location.reload();
+    let searchImg = document.getElementById("searchImg");
+    searchImg.setAttribute("class", "imgBusqueda");
 });

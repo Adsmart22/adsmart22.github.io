@@ -38,10 +38,6 @@ async function conectar () {
     let gifInfo = await response.json();
     let status = gifInfo.meta.status;
 
-    //console.warn(gifInfo);
-    //console.log(status);
-    //console.log("Tmaño " + gifInfo.data.length);
-
     try {
         if (status === 200 && gifInfo.data.length > 0) {
 
@@ -72,7 +68,7 @@ async function conectar () {
                 } catch{
                     title = tituloGenerico;
                 }
-                crearGiF(idGif, url, name, title, "resultTrendingGif", "cardTrending");
+                crearGiF(idGif, url, name, title, "resultTrendingGif", "cardTrending", "modalViewTrend", "mainContainerTrend");
             } 
             sessionStorage.setItem('indiceTrending', '12');
         } else if (status === 404){

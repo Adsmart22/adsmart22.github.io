@@ -96,7 +96,6 @@
 .cardTrending {
   width: 243px;
   height: 187px;
-  margin-left: 22px;
 }
 
 .gifResult {
@@ -156,19 +155,171 @@
 }
 
 /* Clases para el modal hover - desktop*/
-.cardOptions {
-  background-color: #572EE5;
-  opacity: 0.7;
-  position: absolute;
-  z-index: 2;
+@media all and (min-width: 100px) {
+  .mainContainer {
+    position: relative;
+    width: 100%;
+  }
+  .gifResult, .imgGifItem, .cardTrending {
+    position: absolute;
+  }
+  .modalView, .modalViewTrend, .modalViewFavGif {
+    background-color: #572EE5;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    display: none;
+  }
+  .mainContainer, .modalView {
+    width: 156px;
+    height: 120px;
+  }
+  #resultTrendingGif::-webkit-scrollbar {
+    display: none;
+  }
+  .mainContainerTrend, .mainContFavGif {
+    position: relative;
+    width: 100%;
+  }
+  .mainContainerTrend {
+    width: 243px;
+    height: 187px;
+  }
+  .mainContainerTrend {
+    margin-left: 22px;
+  }
+  .modalViewTrend {
+    height: 187px;
+  }
+  .mainContFavGif {
+    width: 100%;
+    height: 120px;
+  }
+  .modalViewFavGif {
+    height: 120px;
+  }
 }
 
-.cardOptionsHidden {
-  opacity: 0;
+@media all and (min-width: 376px) {
+  .mainContainer {
+    position: relative;
+    width: 100%;
+  }
+  .gifResult, .imgGifItem, .cardTrending {
+    position: absolute;
+  }
+  .mainContainer, .modalView {
+    width: 100%;
+    height: 170px;
+  }
+  .mainContFavGif, .modalViewFavGif {
+    width: 100%;
+    height: 200px;
+  }
+  .gifResult, .cardTrending {
+    width: 100%;
+    height: 100%;
+  }
+  .mainContainerTrend, .modalViewTrend {
+    width: 243px;
+    height: 200px;
+  }
+  .modalView, .modalViewTrend, .modalViewFavGif {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    display: none;
+    /* #panelDescarga{
+            position: relative;
+            width: 50px;
+            top: -7px;
+            
+            img, a {
+                position: absolute;
+            }
+        
+            a {
+                z-index: 2;
+                opacity: 0;
+            }
+        } */
+  }
+  .modalView .divContNew, .modalViewTrend .divContNew, .modalViewFavGif .divContNew {
+    width: 100%;
+    height: 5vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .modalView .divLogos, .modalViewTrend .divLogos, .modalViewFavGif .divLogos {
+    opacity: 0.7;
+    background: #FFFFFF;
+    border-radius: 6px;
+    border-radius: 6px;
+    width: 25px;
+    height: 25px;
+    margin-right: 1vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .modalView .descarga, .modalViewTrend .descarga, .modalViewFavGif .descarga {
+    position: relative;
+  }
+  .modalView .descarga img, .modalView .descarga a, .modalViewTrend .descarga img, .modalViewTrend .descarga a, .modalViewFavGif .descarga img, .modalViewFavGif .descarga a {
+    position: absolute;
+  }
+  .modalView .descarga a, .modalViewTrend .descarga a, .modalViewFavGif .descarga a {
+    z-index: 2;
+    opacity: 0;
+  }
+  .modalView .imagesFunc, .modalViewTrend .imagesFunc, .modalViewFavGif .imagesFunc {
+    width: 18px;
+    height: 18px;
+  }
+  .modalView .cardName, .modalViewTrend .cardName, .modalViewFavGif .cardName {
+    font-family: "Roboto";
+    font-weight: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+    width: 80%;
+    text-align: left;
+    margin-left: 1.5vw;
+    margin-top: 3vh;
+  }
+  .modalView .cardTitle, .modalViewTrend .cardTitle, .modalViewFavGif .cardTitle {
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 80%;
+    text-align: left;
+    margin-left: 1.5vw;
+  }
 }
 
-.cardContainer {
-  position: relative;
+@media all and (min-width: 700px) {
+  .gifResult {
+    width: 100%;
+    height: 200px;
+  }
 }
 
 /* Estilos para la grabacion */

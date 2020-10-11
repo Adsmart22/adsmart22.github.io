@@ -12,8 +12,9 @@ modoOscuro.addEventListener("click", () => {
     let trend = document.getElementById("trend");
     let footer = document.getElementsByTagName("footer");
     let modal = document.getElementById("modal");
+    let body = document.getElementsByTagName("body");
     
-
+    body[0].classList.toggle("darkModeBody");
     header[0].classList.toggle("darkModeHeader");
     main.classList.toggle("darkMain");
     favorites.classList.toggle("darkMain");

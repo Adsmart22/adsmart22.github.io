@@ -96,4 +96,8 @@
 .darkModeModal #imgUser, .darkModeModal span {
   color: #FFFFFF;
 }
+
+.darkModeBody {
+  background-color: #37383C;
+}
 /*# sourceMappingURL=darkMode.css.map */

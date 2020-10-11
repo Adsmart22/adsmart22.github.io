@@ -1,11 +1,12 @@
 @import './variables.scss';
 
 .myGifos{
-    text-align: center;
+    //text-align: center;
 
-    img{
+    .imgGif{
         width: $gifImgW;
         height: $genericHeightIcons;
+        margin-left: 50vw;
     }
 
     #gifosItems{

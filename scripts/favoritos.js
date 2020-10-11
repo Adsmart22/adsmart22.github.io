@@ -84,7 +84,7 @@ function crearTarjeta(data){
         console.error(error);
     }
 
-    crearGiF(idGif, url, name, title, "favoriteItems", "gifResult");
+    crearGiF(idGif, url, name, title, "favoriteItems", "gifResult", "modalViewFavGif", "mainContFavGif");
 }
 
 

@@ -74,5 +74,5 @@ function crearTarjeta(data){
         console.error(error);
     }
 
-    crearGiF(idGif, url, name, title, "gifosItems", "imgGifItem");
+    crearGiF(idGif, url, name, title, "gifosItems", "imgGifItem", "modalViewFavGif", "mainContFavGif");
 }

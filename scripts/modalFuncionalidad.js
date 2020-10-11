@@ -4,49 +4,162 @@ let modal = document.getElementById("modal");
 const imagenModal = document.getElementById("centralImg");
 const imgUser = document.getElementById("imgUser");
 
-export function crearGiF(idGif, urlGif, name, title, idContainer, className){    
+//export function crearGiF(idGif, urlGif, name, title, idContainer, className,){    
+export function crearGiF(idGif, urlGif, name, title, idContainer, className, modalViewClass, mainContainerClass){        
     let contenedor = document.getElementById(idContainer);
-    let card = document.createElement("img");
+    let mainContainer = document.createElement("div"); 
+    let modalOver = document.createElement("div"); 
+    let card = document.createElement("img"); 
 
+    /* Incia Elementos de modal */
+    let divDown = document.createElement("div");
+    let imgDownload = document.createElement("img");
+    let divMax = document.createElement("div");
+    let imgAgrandar = document.createElement("img");
+    let divFav = document.createElement("div");
+    let imgFavorito = document.createElement("img");
+    let cardName = document.createElement("p");
+    let cardTitle = document.createElement("p");
+    let divContNew = document.createElement("div");
+    let enlace = document.createElement("a");
+
+    imgDownload.src = "./images/icons/icon-download.svg";
+    imgDownload.setAttribute("class", "imagesFunc");
+    imgFavorito.src = "./images/icons/icon-fav-active.svg";
+    imgFavorito.setAttribute("class", "imagesFunc");
+    imgFavorito.id = "favModal";
+    imgAgrandar.src =" ./images/icons/icon-max.svg";
+    imgAgrandar.setAttribute("class", "imagesFunc");
+    cardName.innerText = name;
+    cardName.setAttribute("class", "cardName");
+    cardTitle.innerText = title;
+    cardTitle.setAttribute("class", "cardTitle");
+    enlace.id = "download2";
+    enlace.href = "";
+    enlace.innerHTML = "Des";
+
+    divDown.setAttribute("class", "divLogos descarga");
+    divFav.setAttribute("class", "divLogos");
+    divMax.setAttribute("class", "divLogos");
+    divContNew.setAttribute("class", "divContNew");
+
+    divDown.append(imgDownload);
+    divDown.append(enlace);
+    divFav.append(imgFavorito);
+    divMax.append(imgAgrandar);
+
+    divContNew.append(divFav);
+    divContNew.append(divMax);
+    divContNew.append(divDown);
+
+    modalOver.append(divContNew);
+    modalOver.append(cardName);
+    modalOver.append(cardTitle);
+
+    /* Termina Elementos de modal */
+  
     card.src = urlGif;
     card.id = idGif;
     card.alt = title;
     card.setAttribute("class", className);
+    modalOver.setAttribute("class", modalViewClass);
+    mainContainer.setAttribute("class", mainContainerClass);
+    mainContainer.append(card);
+    mainContainer.append(modalOver);
+    contenedor.append(mainContainer);
 
-    contenedor.append(card);
+    /* divFav.addEventListener("click", ()=> {
+        alert("Entra a click fav modal");
+        let rutaImg = (imgFavorito.src).slice(49, 68);
 
-    card.addEventListener("click", () => {
+        if( rutaImg == 'icon-favoritos.svg') {
+            console.error("ya está seleccionada");
+            deleteFavorite( card.id );
+        }
+        else {
+            imgFavorito.src = "./images/icons/icon-favoritos.svg";
+            arregloFavoritos.push( card.id );
+            localStorage.setItem('favoritos', JSON.stringify(arregloFavoritos));
+            console.log("localStorage"+ localStorage.favoritos);
+        }
+        event.stopPropagation();
+    }); */
+
+    divMax.addEventListener("click", () => {
+        modalOver.style.display = "none";
         modal.style.display="block";
         imagenModal.src = card.src;
         imagenModal.id = card.id;
         imgUser.textContent = name;
- 
+    
         let titulo = document.createElement("span");
         titulo.innerText = title;
         imgUser.append(titulo);
-        isFavorite(card.id)
+        isFavorite(card.id);
 
         downloadImagen(urlGif).then(blob => {
             const url2 = URL.createObjectURL(blob);
-            console.log ("Valor d URL 2 " + url2);
             let a = document.getElementById("descarga");
             a.href = url2;
             a.download = name + '.gif';
             a.title = 'Descargar';
             a.textContent = 'Descargar';
-        }).catch(console.error); 
+        }).catch(console.error);
     });
+
+    divDown.addEventListener("click", ()=> {
+        downloadImagen(urlGif).then(blob => {
+            const url3 = URL.createObjectURL(blob);
+            let a = document.getElementById("download2");
+            a.href = url3;
+            a.download = name + '.gif';
+            a.title = 'Descargar';
+            a.textContent = 'Descargar';
+        }).catch(console.error);
+    });
+
+    mainContainer.addEventListener("mouseover", () =>{
+        modalOver.style.display = "block";
+        sessionStorage.setItem("modalActivo", "1");
+        isFavorite(card.id); 
+    });
+
+    mainContainer.addEventListener("mouseout", () =>{
+        modalOver.style.display = "none";
+        sessionStorage.setItem("modalActivo", "0");
+    });
+
+    if(screen.width < 376 ) {
+        mainContainer.addEventListener("click", () => {
+            modalOver.style.display = "none";
+            modal.style.display="block";
+            imagenModal.src = card.src;
+            imagenModal.id = card.id;
+            imgUser.textContent = name;
+     
+            let titulo = document.createElement("span");
+            titulo.innerText = title;
+            imgUser.append(titulo);
+            isFavorite(card.id);
+    
+            downloadImagen(urlGif).then(blob => {
+                const url2 = URL.createObjectURL(blob);
+                let a = document.getElementById("descarga");
+                a.href = url2;
+                a.download = name + '.gif';
+                a.title = 'Descargar';
+                a.textContent = 'Descargar';
+            }).catch(console.error); 
+        });
+    }
+    
 }
 
 /* Funcionalidad para descarga de gif */
 
 async function downloadImagen(url) {
-    console.info("Valor de URL" + url);
     let response = await fetch(url);
     let gifBlob = await response.blob();
-    console.log ("Entra a la transformación en blob");
-    console.log("Response: " + response);
-    console.info("Blob: " + gifBlob);
     return gifBlob;
 }
 
@@ -77,22 +190,23 @@ btnFavoritos.addEventListener("click", () => {
 });
 
 
-
+//Permite validar si la imagen mostrara ya se encuentra en favoritos
 function isFavorite(cardId) {
-    //Permite validar si la imagen mostrara ya se encuentra en favoritos
-
+    console.info("Entra a isFavorite");
     if(!localStorage.getItem("favoritos")){
         return 0;
     }
     else {
-        //console.warn("Entro else");
+        console.log("Entra a else");
         let favoritos = localStorage.getItem("favoritos") ;
         let arregloLocal = JSON.parse(favoritos);
+        let valorModal = localStorage.getItem("modalActivo");
+        let favModal = document.getElementById("favModal");
 
-        //console.warn("Tamaño arreglo local: " + arregloLocal.length);
+        console.log("valorModal: " + valorModal);
 
         for (let i=0; i < arregloLocal.length; i+=1){
-            if(cardId === arregloLocal[i]) {
+            if(cardId === arregloLocal[i]) {               
                 btnFavoritos.src = "./images/icons/icon-favoritos.svg";
                 break;
             }
@@ -101,17 +215,21 @@ function isFavorite(cardId) {
             }
         }
     }
+    event.stopImmediatePropagation();
 }
 
 function deleteFavorite(cardId){
     //Permite eliminar una gif de mis favoritos
+    let favModal = document.getElementById("favModal");
+    let valorModal = localStorage.getItem("modalActivo");
 
+    console.log("Entra a eliminar");
     console.log(arregloFavoritos);
 
     for (let i=0; i < arregloFavoritos.length; i+=1){
         if(cardId === arregloFavoritos[i]) {
             arregloFavoritos.pop(cardId);
-            btnFavoritos.src = "./images/icons/icon-fav-active.svg";
+            btnFavoritos.src = "./images/icons/icon-fav-active.svg";        
             break;
         }
     }

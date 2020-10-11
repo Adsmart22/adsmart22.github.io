@@ -1,6 +1,6 @@
 /* Importar variables */
 
-import { endpointSearch, apiKey, tituloGenerico, nombreGenerico } from './variables.js';
+import { endpointAutocomplete, endpointSearch, apiKey, tituloGenerico, nombreGenerico, limpiarGridBusqueda } from './variables.js';
 import {crearGiF} from './modalFuncionalidad.js';
 
 /* agregar eventos a los botones */
@@ -56,7 +56,7 @@ function crearResultadoBusqueda(resultadoBusqueda, itemBusqueda){
     let imgNoRes = document.getElementById("sinResulutados");
 
     if ( sessionStorage.getItem('addResult') === '0' ){
-        limpiarGrid();
+        limpiarGridBusqueda();
     }
 
     imgNoRes.style.display = "none";
@@ -96,7 +96,7 @@ function crearResultadoBusqueda(resultadoBusqueda, itemBusqueda){
         }
 
         sessionStorage.setItem('indiceBusqueda', '12');
-        crearGiF(idGif, url, name, title, "resultContainer", "gifResult");
+        crearGiF(idGif, url, name, title, "resultContainer", "gifResult", "modalView", "mainContainer");
     }
 }
 
@@ -108,16 +108,6 @@ function mostrarNoResultados() {
     panel[0].style.display = "block";
     imgNoRes.style.display = "block";
     txt.innerText = "Sin resultados"
-}
-
-function limpiarGrid() {
-    let grid = document.getElementById("resultContainer");
-
-    while( grid.firstChild ) {
-        grid.removeChild( grid.firstChild );
-    }
-
-    sessionStorage.setItem('indiceBusqueda', '0');
 }
 
 /* EVENTOS Y FUNCIONALIDAD PARA VER MAS */
@@ -148,3 +138,101 @@ function limpiarGrid() {
     }
  }
  
+
+
+ /* FUNCIONALIDAD PARA AUTOCOMPLETAR Y EJECUTAR BÚSQUEDA ENSEGUIDA */
+
+/* EVENTOS Y FUNCIONALIDAD PARA AUTOMPLETAR */
+
+let txtBusqueda = document.getElementById("barraBuscadora");
+
+//Cuando cambie el input, hacer la búsqueda
+
+txtBusqueda.addEventListener("keydown", () => {
+    conectarAutocompetar();
+    txtBusqueda.focus();
+    limpiarGridBusqueda();
+});
+
+async function conectarAutocompetar(){
+    let response = await fetch(endpointAutocomplete + "?api_key="+ apiKey + "&q=" + txtBusqueda.value);
+    let tagsAuto = await response.json();
+    let status = tagsAuto.meta.status;
+
+    try {
+        if (status === 200 && tagsAuto.data.length > 0) {
+            limpiarLista();
+            actualizarTags(tagsAuto.data);
+            limpiarGridBusqueda();
+        }
+        else if (status === 404){
+            throw new Error("Error - recurso no encontrado");
+        }
+        else {
+            throw new Error("Error al recuperar la información")
+        }
+    }
+    catch(error) {
+        console.error(error);
+    }
+}
+
+function limpiarLista(){
+    let numeroItems = document.querySelectorAll('#coincidencias div');
+    let lista = document.getElementById('coincidencias');
+    let div;
+
+    for(let i=0; div=numeroItems[i]; i++) {
+        div.parentNode.removeChild(div);
+    }
+}
+
+let panelBusqueda = document.getElementById('panelControl');
+let btnCerrar = document.getElementById('cerrarBusqueda');
+
+function actualizarTags(valores) {
+    panelBusqueda.style.flexDirection = "row-reverse";
+    btnCerrar.style.display = "block";
+    limpiarGridBusqueda();
+
+    let lista = document.getElementById("coincidencias");
+
+    for ( let a=0; a < valores.length ; a+=1 ) {
+        let listContainer = document.createElement("div");
+        let imgLista = document.createElement("img");
+        let itemList = document.createElement("li");
+        
+        itemList.innerText = valores[a].name;
+        imgLista.src = "./images/icons/icon-search-mod-noc.svg";
+
+        listContainer.addEventListener("click", () => {
+            actualizarTexto(itemList.innerText, "actualizar");
+        });
+
+        btnCerrar.addEventListener("click", () => {
+            actualizarTexto("", "borrar");
+            limpiarGridBusqueda();
+        })
+
+        listContainer.append(imgLista);
+        listContainer.append(itemList);
+        lista.append(listContainer);
+    }
+}
+
+function actualizarTexto(texto, accion) {
+    if (accion === "borrar") {
+        txtBusqueda.value="";
+        txtBusqueda.focus();
+    }else {
+        txtBusqueda.value = texto;
+        txtBusqueda.focus();
+        console.warn("Antes de ejecutar el obtener resultado")
+        obtenerResultado(txtBusqueda.value);
+    }
+    
+    limpiarLista();
+    limpiarGridBusqueda();
+    panelBusqueda.style.flexDirection = "row";
+    btnCerrar.style.display = "none";
+}
