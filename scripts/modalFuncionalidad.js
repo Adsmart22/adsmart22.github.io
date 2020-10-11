@@ -68,8 +68,7 @@ export function crearGiF(idGif, urlGif, name, title, idContainer, className, mod
     mainContainer.append(modalOver);
     contenedor.append(mainContainer);
 
-    /* divFav.addEventListener("click", ()=> {
-        alert("Entra a click fav modal");
+    divFav.addEventListener("click", ()=> {
         let rutaImg = (imgFavorito.src).slice(49, 68);
 
         if( rutaImg == 'icon-favoritos.svg') {
@@ -83,7 +82,7 @@ export function crearGiF(idGif, urlGif, name, title, idContainer, className, mod
             console.log("localStorage"+ localStorage.favoritos);
         }
         event.stopPropagation();
-    }); */
+    });
 
     divMax.addEventListener("click", () => {
         modalOver.style.display = "none";
